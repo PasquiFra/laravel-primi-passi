@@ -16,7 +16,48 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $crypto = [
+    $allcrypto = [
+        [
+            'nome' => 'Bitcoin',
+            'ticker' => 'BTC',
+            'prezzo_usd' => '66932.56'
+        ],
+        [
+            'nome' => 'Ethereum',
+            'ticker' => 'ETH',
+            'prezzo_usd' => '3804.50'
+        ],
+        [
+            'nome' => 'Tether USD',
+            'ticker' => 'USDT',
+            'prezzo_usd' => '0.999'
+        ],
+        [
+            'nome' => 'Binance Coin',
+            'ticker' => 'BNB',
+            'prezzo_usd' => '421.91'
+        ],
+        [
+            'nome' => 'Pepe Coin',
+            'ticker' => 'PEPE',
+            'prezzo_usd' => '0.00000758'
+        ]
+    ];
+    $data = [
+        'crypto' => $allcrypto, // uguale: compact('allcrypto')
+
+    ];
+    return view('home', $data);
+})->name('home');
+
+Route::get('coins/btc', function () {
+    $crypto =
+        [
+            'nome' => 'Bitcoin',
+            'ticker' => 'BTC',
+            'prezzo_usd' => '66932.56'
+        ];
+    $allcrypto = [
         [
             'nome' => 'Bitcoin',
             'ticker' => 'BTC',
@@ -45,20 +86,7 @@ Route::get('/', function () {
     ];
     $data = [
         'crypto' => $crypto, // uguale: compact('crypto')
-
-    ];
-    return view('home', $data);
-})->name('home');
-
-Route::get('coins/btc', function () {
-    $crypto =
-        [
-            'nome' => 'Bitcoin',
-            'ticker' => 'BTC',
-            'prezzo_usd' => '66932.56'
-        ];
-    $data = [
-        'crypto' => $crypto, // uguale: compact('crypto')
+        'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
     return view('coins/btc', $data);
@@ -71,8 +99,36 @@ Route::get('coins/eth', function () {
             'ticker' => 'ETH',
             'prezzo_usd' => '3804.50'
         ];
+    $allcrypto = [
+        [
+            'nome' => 'Bitcoin',
+            'ticker' => 'BTC',
+            'prezzo_usd' => '66932.56'
+        ],
+        [
+            'nome' => 'Ethereum',
+            'ticker' => 'ETH',
+            'prezzo_usd' => '3804.50'
+        ],
+        [
+            'nome' => 'Tether USD',
+            'ticker' => 'USDT',
+            'prezzo_usd' => '0.999'
+        ],
+        [
+            'nome' => 'Binance Coin',
+            'ticker' => 'BNB',
+            'prezzo_usd' => '421.91'
+        ],
+        [
+            'nome' => 'Pepe Coin',
+            'ticker' => 'PEPE',
+            'prezzo_usd' => '0.00000758'
+        ]
+    ];
     $data = [
         'crypto' => $crypto, // uguale: compact('crypto')
+        'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
     return view('coins/eth', $data);
@@ -84,8 +140,36 @@ Route::get('coins/bnb', function () {
         'ticker' => 'BNB',
         'prezzo_usd' => '421.91'
     ];
+    $allcrypto = [
+        [
+            'nome' => 'Bitcoin',
+            'ticker' => 'BTC',
+            'prezzo_usd' => '66932.56'
+        ],
+        [
+            'nome' => 'Ethereum',
+            'ticker' => 'ETH',
+            'prezzo_usd' => '3804.50'
+        ],
+        [
+            'nome' => 'Tether USD',
+            'ticker' => 'USDT',
+            'prezzo_usd' => '0.999'
+        ],
+        [
+            'nome' => 'Binance Coin',
+            'ticker' => 'BNB',
+            'prezzo_usd' => '421.91'
+        ],
+        [
+            'nome' => 'Pepe Coin',
+            'ticker' => 'PEPE',
+            'prezzo_usd' => '0.00000758'
+        ]
+    ];
     $data = [
         'crypto' => $crypto, // uguale: compact('crypto')
+        'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
     return view('coins/bnb', $data);
@@ -97,8 +181,36 @@ Route::get('coins/usdt', function () {
         'ticker' => 'USDT',
         'prezzo_usd' => '0.999'
     ];
+    $allcrypto = [
+        [
+            'nome' => 'Bitcoin',
+            'ticker' => 'BTC',
+            'prezzo_usd' => '66932.56'
+        ],
+        [
+            'nome' => 'Ethereum',
+            'ticker' => 'ETH',
+            'prezzo_usd' => '3804.50'
+        ],
+        [
+            'nome' => 'Tether USD',
+            'ticker' => 'USDT',
+            'prezzo_usd' => '0.999'
+        ],
+        [
+            'nome' => 'Binance Coin',
+            'ticker' => 'BNB',
+            'prezzo_usd' => '421.91'
+        ],
+        [
+            'nome' => 'Pepe Coin',
+            'ticker' => 'PEPE',
+            'prezzo_usd' => '0.00000758'
+        ]
+    ];
     $data = [
         'crypto' => $crypto, // uguale: compact('crypto')
+        'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
     return view('coins/usdt', $data);
@@ -110,8 +222,36 @@ Route::get('coins/pepe', function () {
         'ticker' => 'PEPE',
         'prezzo_usd' => '0.00000758'
     ];
+    $allcrypto = [
+        [
+            'nome' => 'Bitcoin',
+            'ticker' => 'BTC',
+            'prezzo_usd' => '66932.56'
+        ],
+        [
+            'nome' => 'Ethereum',
+            'ticker' => 'ETH',
+            'prezzo_usd' => '3804.50'
+        ],
+        [
+            'nome' => 'Tether USD',
+            'ticker' => 'USDT',
+            'prezzo_usd' => '0.999'
+        ],
+        [
+            'nome' => 'Binance Coin',
+            'ticker' => 'BNB',
+            'prezzo_usd' => '421.91'
+        ],
+        [
+            'nome' => 'Pepe Coin',
+            'ticker' => 'PEPE',
+            'prezzo_usd' => '0.00000758'
+        ]
+    ];
     $data = [
         'crypto' => $crypto, // uguale: compact('crypto')
+        'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
     ];
     return view('coins/pepe', $data);
 })->name('PEPE');
