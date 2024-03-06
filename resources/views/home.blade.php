@@ -1,7 +1,6 @@
 @php
 
 namespace Resources\Views;
-    
 @endphp
 
 <!DOCTYPE html>
@@ -15,6 +14,16 @@ namespace Resources\Views;
 
 </head>
 <body>
-    <h1>My Laravel Homepage</h1>
+    <h1>My Crypto Laravel</h1>
+
+    <ul>
+        @foreach ( $crypto as $c)
+        <li>
+            <div>Nome: <strong> {{ $c['nome'] }} </strong></div>         
+            <div>Ticker: <strong>{{ $c['ticker'] }}</strong></div>         
+            <div>Prezzo: USD <strong>{{ $c['prezzo_usd'] }}</strong></div>                
+        </li>
+        @endforeach
+    </ul>
 </body>
 </html>
