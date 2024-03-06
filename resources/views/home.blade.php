@@ -15,15 +15,19 @@ namespace Resources\Views;
 </head>
 <body>
     <h1>My Crypto Laravel</h1>
-
     <ul>
-        @foreach ( $crypto as $c)
+        @forelse ( $crypto as $c)
         <li>
-            <div>Nome: <strong> {{ $c['nome'] }} </strong></div>         
-            <div>Ticker: <strong>{{ $c['ticker'] }}</strong></div>         
+            <div>Nome: <strong><a href="{{ route($c['ticker']) }}"> {{ $c['nome'] }} </a></strong></div>         
+            <div>Ticker: <strong><a> {{ $c['ticker'] }} </a></strong></div>         
             <div>Prezzo: USD <strong>{{ $c['prezzo_usd'] }}</strong></div>                
         </li>
-        @endforeach
+        @empty
+        <h3><strong>CHIUSO!</strong></h3>
+        <li>
+            Il mercato è aperto dal Lun al Ven, dalle ore 9:00 alle ore 17:00. Festivi esclusi
+        </li>
+        @endforelse
     </ul>
 </body>
 </html>
