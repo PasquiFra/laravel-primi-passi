@@ -50,7 +50,7 @@ Route::get('/', function () {
     return view('home', $data);
 })->name('home');
 
-Route::get('coins/btc', function () {
+Route::get('coins.btc', function () {
     $crypto =
         [
             'nome' => 'Bitcoin',
@@ -89,10 +89,10 @@ Route::get('coins/btc', function () {
         'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
-    return view('coins/btc', $data);
+    return view('coins.btc', $data);
 })->name('BTC');
 
-Route::get('coins/eth', function () {
+Route::get('coins.eth', function () {
     $crypto =
         [
             'nome' => 'Ethereum',
@@ -131,10 +131,10 @@ Route::get('coins/eth', function () {
         'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
-    return view('coins/eth', $data);
+    return view('coins.eth', $data);
 })->name('ETH');
 
-Route::get('coins/bnb', function () {
+Route::get('coins.bnb', function () {
     $crypto = [
         'nome' => 'Binance Coin',
         'ticker' => 'BNB',
@@ -172,10 +172,10 @@ Route::get('coins/bnb', function () {
         'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
-    return view('coins/bnb', $data);
+    return view('coins.bnb', $data);
 })->name('BNB');
 
-Route::get('coins/usdt', function () {
+Route::get('coins.usdt', function () {
     $crypto = [
         'nome' => 'Tether USD',
         'ticker' => 'USDT',
@@ -213,10 +213,10 @@ Route::get('coins/usdt', function () {
         'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
 
     ];
-    return view('coins/usdt', $data);
+    return view('coins.usdt', $data);
 })->name('USDT');
 
-Route::get('coins/pepe', function () {
+Route::get('coins.pepe', function () {
     $crypto = [
         'nome' => 'Pepe Coin',
         'ticker' => 'PEPE',
@@ -253,5 +253,5 @@ Route::get('coins/pepe', function () {
         'crypto' => $crypto, // uguale: compact('crypto')
         'allcrypto' => $allcrypto, // uguale: compact('allcrypto')
     ];
-    return view('coins/pepe', $data);
+    return view('coins.pepe', $data);
 })->name('PEPE');
